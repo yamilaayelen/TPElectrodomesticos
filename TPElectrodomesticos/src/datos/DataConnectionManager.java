@@ -16,7 +16,7 @@ private static DataConnectionManager instancia;
 		return instancia;
 	}
 	
-	private static String dbUrl="jdbc:mysql://localhost:3306/ejemplojava";
+	private static String dbUrl="jdbc:mysql://localhost/TPElectrodomesticos";
 	private static String dbUser="java";
 	private static String dbPassword="java123";
 	

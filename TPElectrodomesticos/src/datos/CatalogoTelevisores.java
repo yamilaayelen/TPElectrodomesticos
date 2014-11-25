@@ -70,9 +70,7 @@ public class CatalogoTelevisores {
 				tel.setPrecioBase(rs.getFloat("Precio Base"));
 				tel.setColor(rs.getString("Color"));
 				tel.setPeso(rs.getFloat("Peso"));
-				//lav.setConsumoEnergetico(rs.getString("ConsumoEnergetico"));
-				
-				
+				tel.setConsumoEnergetico(rs.getString("ConsumoEnergetico"));
 			}					
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -90,6 +88,7 @@ public class CatalogoTelevisores {
 		return tel;
 	}
 
+	@SuppressWarnings("unused")
 	public void addTelevision(Television nuevoTel){
 		
 		String sql="insert into televisores(descrip, precioBase, color, peso, consumoEnergetico, resolucion, sintonizadorTDT) values (?,?)";
@@ -102,9 +101,9 @@ public class CatalogoTelevisores {
 			sentencia.setFloat(2, nuevoTel.getPrecioBase());
 			sentencia.setString(3, nuevoTel.getColor());
 			sentencia.setFloat(4, nuevoTel.getPeso());
-			//sentencia.setString(5, nuevoTel.getConsumoEnergetico());
-			sentencia.setFloat(5, nuevoTel.getResolucion());  //ver porque float
-			sentencia.setBoolean(6, nuevoTel.getSintonizadorTDT());
+			sentencia.setString(5, nuevoTel.getConsumoEnergetico());
+			sentencia.setFloat(6, nuevoTel.getResolucion());  //ver porque float
+			sentencia.setBoolean(7, nuevoTel.getSintonizadorTDT());
 			
 			int filasAfectadas=sentencia.executeUpdate();
 			ResultSet cps= sentencia.getGeneratedKeys();

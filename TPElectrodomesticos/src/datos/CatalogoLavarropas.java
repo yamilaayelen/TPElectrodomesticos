@@ -28,7 +28,7 @@ public class CatalogoLavarropas {
 				lav.setPrecioBase(rs.getFloat("Precio Base"));
 				lav.setColor(rs.getString("Color"));
 				lav.setPeso(rs.getFloat("Peso"));
-				//lav.setConsumoEnergetico(rs.getString("Consumo Energetico"));
+				lav.setConsumoEnergetico(rs.getString("Consumo Energetico"));
 				lav.setCarga(rs.getInt("Carga"));
 				
 				lavas.add(lav);
@@ -71,7 +71,7 @@ public class CatalogoLavarropas {
 				lav.setPrecioBase(rs.getFloat("Precio Base"));
 				lav.setColor(rs.getString("Color"));
 				lav.setPeso(rs.getFloat("Peso"));
-				//lav.setConsumoEnergetico(rs.getString("Consumo Energetico"));
+				lav.setConsumoEnergetico(rs.getString("Consumo Energetico"));
 				lav.setCarga(rs.getInt("Carga"));
 				
 			}					
@@ -91,6 +91,7 @@ public class CatalogoLavarropas {
 		return lav;
 	}
 
+	@SuppressWarnings("unused")
 	public void addLavarropas(Lavarropas nuevoLav){
 		
 		String sql="insert into lavarropas(descrip, precioBase, color, peso, consumoEnergetico, carga) values (?,?)";
