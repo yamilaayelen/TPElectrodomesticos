@@ -51,7 +51,7 @@ public class VentanaBajaLavarropas extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Ingrese descripcion del Lavarropas a eliminar:");
-		lblNewLabel.setBounds(25, 23, 234, 14);
+		lblNewLabel.setBounds(25, 23, 360, 14);
 		contentPane.add(lblNewLabel);
 		
 		descrip = new JTextField();

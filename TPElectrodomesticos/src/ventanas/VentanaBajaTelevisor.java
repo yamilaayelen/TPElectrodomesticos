@@ -50,7 +50,7 @@ public class VentanaBajaTelevisor extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblIngreseDescripcionDel = new JLabel("Ingrese descripcion del Televisor a eliminar:");
-		lblIngreseDescripcionDel.setBounds(36, 23, 226, 14);
+		lblIngreseDescripcionDel.setBounds(36, 23, 363, 14);
 		contentPane.add(lblIngreseDescripcionDel);
 		
 		descrip = new JTextField();
