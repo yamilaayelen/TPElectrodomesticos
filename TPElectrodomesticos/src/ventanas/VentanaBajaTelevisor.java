@@ -50,11 +50,11 @@ public class VentanaBajaTelevisor extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblIngreseDescripcionDel = new JLabel("Ingrese descripcion del Televisor a eliminar:");
-		lblIngreseDescripcionDel.setBounds(36, 23, 363, 14);
+		lblIngreseDescripcionDel.setBounds(10, 24, 389, 14);
 		contentPane.add(lblIngreseDescripcionDel);
 		
 		descrip = new JTextField();
-		descrip.setBounds(36, 48, 201, 20);
+		descrip.setBounds(10, 49, 201, 20);
 		contentPane.add(descrip);
 		descrip.setColumns(10);
 		
@@ -74,7 +74,7 @@ public class VentanaBajaTelevisor extends JFrame {
 
 			}
 		});
-		eliminar.setBounds(36, 93, 103, 35);
+		eliminar.setBounds(10, 92, 103, 35);
 		contentPane.add(eliminar);
 		
 		btnSalir = new JButton("Salir");
@@ -84,7 +84,7 @@ public class VentanaBajaTelevisor extends JFrame {
 				dispose();
 			}
 		});
-		btnSalir.setBounds(301, 147, 98, 35);
+		btnSalir.setBounds(256, 147, 98, 35);
 		contentPane.add(btnSalir);
 	}
 
