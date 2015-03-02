@@ -16,19 +16,20 @@ private static DataConnectionManager instancia;
 		return instancia;
 	}
 	
-	private static String dbUrl="jdbc:mysql://localhost/TPElectrodomesticos";
-	private static String dbUser="java";
-	private static String dbPassword="java123";
-	
+	private static String dbUrl="jdbc:mysql://localhost/electrodomesticos";
+	private static String dbUser="root";
+	private static String dbPassword="";
+		
 	private DataConnectionManager(){}
 	
 	private Connection conn;
 	
 	public Connection getConn(){
 		try {
-			if(conn==null || !conn.isValid(3)){
+			if (conn==null || !conn.isValid(3)){
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
-				conn=DriverManager.getConnection(dbUrl,dbUser,dbPassword);	
+				conn=DriverManager.getConnection(dbUrl,dbUser, dbPassword);	
+				
 			}
 			
 		} catch (InstantiationException e) {
@@ -40,7 +41,7 @@ private static DataConnectionManager instancia;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
+		
 		return conn;
 	}
 	

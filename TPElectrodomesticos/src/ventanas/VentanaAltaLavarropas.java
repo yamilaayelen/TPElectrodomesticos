@@ -16,6 +16,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
+
 public class VentanaAltaLavarropas extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -113,7 +114,8 @@ public class VentanaAltaLavarropas extends JFrame {
 				consumoAL=consumoS;
 				
 				Principal.AltaLavarropas(descripcionAL, precioBaseAL, pesoAL, cargaAL, colorAL, consumoAL);
-				JOptionPane.showMessageDialog(null, "Lavarropas registrado");
+								
+				JOptionPane.showMessageDialog(null, "Lavarropas registrado. Java putoooo");
 				
 			}
 		});

@@ -24,12 +24,12 @@ public class CatalogoLavarropas {
 			
 			while(rs.next()){
 				Lavarropas lav= new Lavarropas();
-				lav.setDescrip(rs.getString("Descripción"));
-				lav.setPrecioBase(rs.getFloat("Precio Base"));
-				lav.setColor(rs.getString("Color"));
-				lav.setPeso(rs.getFloat("Peso"));
-				lav.setConsumoEnergetico(rs.getString("Consumo Energetico"));
-				lav.setCarga(rs.getInt("Carga"));
+				lav.setDescrip(rs.getString("descrip"));
+				lav.setPrecioBase(rs.getFloat("precio_base"));
+				lav.setColor(rs.getString("color"));
+				lav.setPeso(rs.getFloat("peso"));
+				lav.setConsumoEnergetico(rs.getString("consumo_energetico"));
+				lav.setCarga(rs.getInt("carga"));
 				
 				lavas.add(lav);
 			}					
@@ -67,12 +67,12 @@ public class CatalogoLavarropas {
 			
 			if(rs.next()){
 				lav= new Lavarropas();
-				lav.setDescrip(rs.getString("Descripción"));
-				lav.setPrecioBase(rs.getFloat("Precio Base"));
-				lav.setColor(rs.getString("Color"));
-				lav.setPeso(rs.getFloat("Peso"));
-				lav.setConsumoEnergetico(rs.getString("Consumo Energetico"));
-				lav.setCarga(rs.getInt("Carga"));
+				lav.setDescrip(rs.getString("descrip"));
+				lav.setPrecioBase(rs.getFloat("precio_base"));
+				lav.setColor(rs.getString("color"));
+				lav.setPeso(rs.getFloat("peso"));
+				lav.setConsumoEnergetico(rs.getString("consumo_energetico"));
+				lav.setCarga(rs.getInt("carga"));
 				
 			}					
 		} catch (SQLException e) {
@@ -91,10 +91,10 @@ public class CatalogoLavarropas {
 		return lav;
 	}
 
-	@SuppressWarnings("unused")
+	
 	public void addLavarropas(Lavarropas nuevoLav){
 		
-		String sql="insert into lavarropas(descrip, precioBase, color, peso, consumoEnergetico, carga) values (?,?)";
+		String sql="insert into lavarropas(descrip, precio_base, color, peso, consumo_energetico, carga) values (?,?,?,?,?,?)";
 		PreparedStatement sentencia=null;
 		Connection conn=DataConnectionManager.getInstancia().getConn();
 		
@@ -104,10 +104,11 @@ public class CatalogoLavarropas {
 			sentencia.setFloat(2, nuevoLav.getPrecioBase());
 			sentencia.setString(3, nuevoLav.getColor());
 			sentencia.setFloat(4, nuevoLav.getPeso());
-			//sentencia.setString(5, nuevoLav.getConsumoEnergetico());
+			sentencia.setString(5, nuevoLav.getConsumoEnergetico());
 			sentencia.setInt(6, nuevoLav.getCarga());
 			
 			int filasAfectadas=sentencia.executeUpdate();
+			
 			ResultSet cps= sentencia.getGeneratedKeys();
 			if(cps.next()){
 				String lavDes=cps.getString(1);

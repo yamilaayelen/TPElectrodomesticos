@@ -1,9 +1,12 @@
 package tp;
+import datos.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 import javax.swing.JOptionPane;
+
+import datos.CatalogoLavarropas;
 
 
 public class Principal 
@@ -12,6 +15,8 @@ public class Principal
 	static ArrayList<Television> televisores = new ArrayList<Television>();
 	static ArrayList<Television> listaTeles = new ArrayList<Television>();
 	static ArrayList<Lavarropas> listaLavas = new ArrayList<Lavarropas>();
+	
+	static ArrayList<Lavarropas> lista = new ArrayList<Lavarropas>();
 	
 	public static void AltaLavarropas(String descripcionAL, String precioBaseAL, String pesoAL, String cargaAL, String colorAL, String consumoAL)
 	{
@@ -27,6 +32,10 @@ public class Principal
 		lava.setConsumoEnergetico(consumoAL);		
 	
 		lavarropas.add(lava);
+		
+		CatalogoLavarropas cat = new CatalogoLavarropas();
+		cat.addLavarropas(lava);
+		
 	}
 
 	public static void AltaTelevision(String descripcionAT, String precioBaseAT, String pesoAT, String colorAT, String consumoAT, String resolucionAT, String sintonizadorAT)
@@ -139,5 +148,15 @@ public class Principal
 		Collections.sort(listaTeles);
 		
 		return listaTeles;
+	}
+	
+	public static ArrayList<Lavarropas> lista()
+	{
+		for(int i=0; i<lavarropas.size();i++)
+		{
+			lista.add(lavarropas.get(i));
+		}
+		return lista;
+
 	}
 }

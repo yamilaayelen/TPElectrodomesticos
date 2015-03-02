@@ -3,8 +3,71 @@ package tp;
 public class Lavarropas extends Electrodomestico
 {
 	private int carga;
+
 	
 	
+	
+	
+	public float getPrecioBase() {
+		return precioBase;
+	}
+
+
+
+	public void setPrecioBase(float precioBase) {
+		this.precioBase = precioBase;
+	}
+
+
+
+	public float getPeso() {
+		return peso;
+	}
+
+
+
+	public void setPeso(float peso) {
+		this.peso = peso;
+	}
+
+
+
+	public String getColor() {
+		return color;
+	}
+
+
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+
+
+	public String getDescrip() {
+		return descrip;
+	}
+
+
+
+	public void setDescrip(String descrip) {
+		this.descrip = descrip;
+	}
+
+
+
+	public String getConsumoEnergetico() {
+		return consumoEnergetico;
+	}
+
+
+
+	public void setConsumoEnergetico(String consumoEnergetico) {
+		this.consumoEnergetico = consumoEnergetico;
+	}
+
+
+
 	public int getCarga() {
 		return carga;
 	}

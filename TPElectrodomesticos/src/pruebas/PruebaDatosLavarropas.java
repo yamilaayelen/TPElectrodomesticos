@@ -17,6 +17,7 @@ public class PruebaDatosLavarropas {
 	System.out.println("Consumo Energetico: "+(nl.getConsumoEnergetico()));
 	System.out.println("Peso: "+Float.toString(nl.getPeso()));
 	System.out.println("Carga: "+Integer.toString(nl.getCarga()));
+
 	catLav.addLavarropas(nl);
 	
 	
@@ -36,7 +37,7 @@ public class PruebaDatosLavarropas {
 		l.setDescrip("Lava1");
 		l.setPrecioBase(12);
 		l.setColor("Blanco");
-		//l.setConsumoEnergetico("A");
+		l.setConsumoEnergetico("A");
 		l.setPeso(12);
 		l.setCarga(45);
 		return l;
