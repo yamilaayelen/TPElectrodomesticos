@@ -11,7 +11,8 @@ import tp.*;
 
 public class CatalogoLavarropas {
 	
-	public ArrayList<Lavarropas> getLavarropas(){
+	public ArrayList<Lavarropas> getLavarropas()
+	{
 		ArrayList<Lavarropas> lavas= new ArrayList<Lavarropas>();
 		
 		String sql="select * from lavarropas";
@@ -131,5 +132,58 @@ public class CatalogoLavarropas {
 		}
 		
 	}
-
+	
+	public void Delete(String descripcion)
+    {
+		String sql="delete from lavarropas where descrip = descripcion";
+		PreparedStatement sentencia=null;
+		
+		try {			
+			sentencia= DataConnectionManager.getInstancia().getConn().prepareStatement(sql);
+			sentencia.setString(1, descripcion);
+			}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally{
+			try{
+				if(sentencia!=null && !sentencia.isClosed()){sentencia.close();}
+				DataConnectionManager.getInstancia().CloseConn();
+				}
+			catch (SQLException sqle){
+				sqle.printStackTrace();
+				}
+			}
+    }
+              
+    public void Update(String desc, String descripcion, float precio, String color, String consumo, float peso, int carga)
+    {
+    	String sql = "update from lavarropas SET descrip=?, precio_base=?, color=?, consumo_energetico=?, peso=?, carga=? WHERE descrip=?";
+    	PreparedStatement sentencia = null;
+    	
+    	try
+    		{
+    		sentencia= DataConnectionManager.getInstancia().getConn().prepareStatement(sql);
+    		sentencia.setString(1, descripcion);
+			sentencia.setFloat(2, precio);
+			sentencia.setString(3, color);
+			sentencia.setString(4, consumo);
+			sentencia.setFloat(5, peso);
+			sentencia.setInt(6, carga);
+			sentencia.setString(7, desc);
+			}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally{
+			try{
+				if(sentencia!=null && !sentencia.isClosed()){sentencia.close();}
+				DataConnectionManager.getInstancia().CloseConn();
+				}
+			catch (SQLException sqle){
+				sqle.printStackTrace();
+				}
+			}
+    	}
+    	
 }

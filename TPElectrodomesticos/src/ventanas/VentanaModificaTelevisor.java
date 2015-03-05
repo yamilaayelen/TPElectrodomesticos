@@ -15,6 +15,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import datos.CatalogoLavarropas;
+import datos.CatalogoTelevisores;
+
 
 public class VentanaModificaTelevisor extends JFrame {
 
@@ -86,6 +89,9 @@ public class VentanaModificaTelevisor extends JFrame {
 			consumo.setText(tele.getColor());
 			resolucion.setText(String.valueOf(tele.getResolucion()));
 			sintonizador.setText(String.valueOf(tele.getSintonizadorTDT()));
+			
+			CatalogoTelevisores cat = new CatalogoTelevisores();
+			cat.Update(desc,descripcion, precioBase, colorT, consumo, resolucion, sintonizador);
 			}
 			
 			else if(tele==null)

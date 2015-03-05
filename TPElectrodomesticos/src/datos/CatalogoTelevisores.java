@@ -28,7 +28,7 @@ public class CatalogoTelevisores {
 				tel.setPrecioBase(rs.getFloat("Precio Base"));
 				tel.setColor(rs.getString("Color"));
 				tel.setPeso(rs.getFloat("Peso"));
-				//lav.setConsumoEnergetico(rs.getString("ConsumoEnergetico"));
+				tel.setConsumoEnergetico(rs.getString("ConsumoEnergetico"));
 				
 				teles.add(tel);
 			}					
@@ -88,7 +88,7 @@ public class CatalogoTelevisores {
 		return tel;
 	}
 
-	@SuppressWarnings("unused")
+
 	public void addTelevision(Television nuevoTel){
 		
 		String sql="insert into televisores(descrip, precioBase, color, peso, consumoEnergetico, resolucion, sintonizadorTDT) values (?,?)";
@@ -102,7 +102,7 @@ public class CatalogoTelevisores {
 			sentencia.setString(3, nuevoTel.getColor());
 			sentencia.setFloat(4, nuevoTel.getPeso());
 			sentencia.setString(5, nuevoTel.getConsumoEnergetico());
-			sentencia.setFloat(6, nuevoTel.getResolucion());  //ver porque float
+			sentencia.setFloat(6, nuevoTel.getResolucion());
 			sentencia.setBoolean(7, nuevoTel.getSintonizadorTDT());
 			
 			int filasAfectadas=sentencia.executeUpdate();
@@ -129,4 +129,57 @@ public class CatalogoTelevisores {
 		
 	}
 
+	public void Delete(String descripcion)
+    {
+		String sql="delete from lavarropas where descrip = descripcion";
+		PreparedStatement sentencia=null;
+		
+		try {			
+			sentencia= DataConnectionManager.getInstancia().getConn().prepareStatement(sql);
+			sentencia.setString(1, descripcion);
+			}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally{
+			try{
+				if(sentencia!=null && !sentencia.isClosed()){sentencia.close();}
+				DataConnectionManager.getInstancia().CloseConn();
+				}
+			catch (SQLException sqle){
+				sqle.printStackTrace();
+				}
+			}
+    }
+              
+    public void Update(String desc, String descripcion, float precio, String color, String consumo, int resolucion, Boolean sintonizador)
+    {
+    	String sql = "update from lavarropas SET descrip=?, precio_base=?, color=?, consumo_energetico=?, peso=?, carga=? WHERE descrip=?";
+    	PreparedStatement sentencia = null;
+    	
+    	try
+    		{
+    		sentencia= DataConnectionManager.getInstancia().getConn().prepareStatement(sql);
+    		sentencia.setString(1, descripcion);
+			sentencia.setFloat(2, precio);
+			sentencia.setString(3, color);
+			sentencia.setString(4, consumo);
+			sentencia.setInt(5, resolucion);
+			sentencia.setBoolean(6, sintonizador);
+			sentencia.setString(7, desc);
+			}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally{
+			try{
+				if(sentencia!=null && !sentencia.isClosed()){sentencia.close();}
+				DataConnectionManager.getInstancia().CloseConn();
+				}
+			catch (SQLException sqle){
+				sqle.printStackTrace();
+				}
+			}
+    	}
+ 
 }

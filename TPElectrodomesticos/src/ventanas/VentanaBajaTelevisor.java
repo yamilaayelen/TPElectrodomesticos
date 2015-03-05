@@ -67,6 +67,7 @@ public class VentanaBajaTelevisor extends JFrame {
 				
 				descripET= descrip.getText();
 				b=Principal.bajaTele(descripET);
+				
 				if(b==0)
 				{
 				JOptionPane.showMessageDialog(null, "Televisor no encontrado");

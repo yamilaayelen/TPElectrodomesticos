@@ -68,6 +68,7 @@ public class VentanaBajaLavarropas extends JFrame {
 				
 				descripEL= descrip.getText();
 				b=Principal.bajaLava(descripEL);
+				
 				if(b==0)
 				{
 				JOptionPane.showMessageDialog(null, "Lavarropas no encontrado");

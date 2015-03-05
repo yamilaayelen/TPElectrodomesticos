@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import datos.CatalogoLavarropas;
+
 public class VentanaModificaLavarropa extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -78,6 +80,10 @@ public class VentanaModificaLavarropa extends JFrame {
 				colorL.setText(lava.getColor());
 				consumo.setText(lava.getConsumoEnergetico());
 				carga.setText(String.valueOf(lava.getCarga()));
+				
+				
+				CatalogoLavarropas cat = new CatalogoLavarropas();
+				cat.Update(desc,descripcion, precioBase, colorL, consumo, peso, carga);
 				}
 				
 				else if(lava==null)

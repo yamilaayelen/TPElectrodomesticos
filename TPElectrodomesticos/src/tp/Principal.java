@@ -53,6 +53,9 @@ public class Principal
 		tele.setSintonizadorTDT(Boolean.valueOf(sintonizadorAT));
 		
 		televisores.add(tele);
+		
+		CatalogoTelevisores cat = new CatalogoTelevisores();
+		cat.addTelevision(tele);
 	}
 
 	public static Lavarropas BuscaLava(String desc)
@@ -90,6 +93,10 @@ public class Principal
 			if(lavarropas.get(i).getDescrip().equals(descripET) == true)
 				{
 				lavarropas.remove(lavarropas.get(i));
+				
+				CatalogoLavarropas cat = new CatalogoLavarropas();
+				cat.Delete(descripET);
+				
 				JOptionPane.showMessageDialog(null, "Lavarropa borrado");
 				b=1;
 				}
@@ -97,14 +104,18 @@ public class Principal
 		return b;
 	}
 
-	public static int bajaTele(String descripEL)
+	public static int bajaTele(String descripET)
 	{
 		int b=0;
 		for(int i=0; i<televisores.size();i++)
 		{
-			if(televisores.get(i).getDescrip().equals(descripEL) == true)
+			if(televisores.get(i).getDescrip().equals(descripET) == true)
 				{
 				televisores.remove(i);
+				
+				CatalogoTelevisores cat = new CatalogoTelevisores();
+				cat.Delete(descripET);
+				
 				JOptionPane.showMessageDialog(null, "Televisor borrado");
 				b=1;
 				break;

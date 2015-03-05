@@ -16,8 +16,9 @@ public class PruebaDatosTelevisores {
 	System.out.println("Color: "+(nt.getColor()));
 	System.out.println("Consumo Energetico: "+(nt.getConsumoEnergetico()));
 	System.out.println("Peso: "+Float.toString(nt.getPeso()));
-	//System.out.println("Resolucion: "+ Integer.toString(nt.getResolucion()));
+	System.out.println("Resolucion: "+ Float.toString(nt.getResolucion()));
 	System.out.println("Sintonizador: "+Boolean.toString(nt.getSintonizadorTDT()));
+	
 	catTel.addTelevision(nt);
 	
 	
@@ -37,7 +38,7 @@ public class PruebaDatosTelevisores {
 		t.setDescrip("Lava1");
 		t.setPrecioBase(12);
 		t.setColor("Blanco");
-		//l.setConsumoEnergetico("A");
+		t.setConsumoEnergetico("A");
 		t.setPeso(12);
 		t.setResolucion(40);
 		t.setSintonizadorTDT(true);

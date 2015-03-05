@@ -115,7 +115,7 @@ public class VentanaAltaLavarropas extends JFrame {
 				
 				Principal.AltaLavarropas(descripcionAL, precioBaseAL, pesoAL, cargaAL, colorAL, consumoAL);
 								
-				JOptionPane.showMessageDialog(null, "Lavarropas registrado. Java putoooo");
+				JOptionPane.showMessageDialog(null, "holaa"); //no hace cambios
 				
 			}
 		});
