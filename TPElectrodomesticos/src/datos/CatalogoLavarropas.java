@@ -15,12 +15,12 @@ public class CatalogoLavarropas {
 	{
 		ArrayList<Lavarropas> lavas= new ArrayList<Lavarropas>();
 		
-		String sql="select * from lavarropas";
-		Statement sentencia=null;
-		ResultSet rs=null;
+		//String sql="select * from lavarropas";
+		//Statement sentencia=null;
+		//ResultSet rs=null;
 		
-		try {			
-			sentencia= DataConnectionManager.getInstancia().getConn().createStatement();
+		//try {			
+			/*sentencia= DataConnectionManager.getInstancia().getConn().createStatement();
 			rs= sentencia.executeQuery(sql);
 			
 			while(rs.next()){
@@ -33,8 +33,38 @@ public class CatalogoLavarropas {
 				lav.setCarga(rs.getInt("carga"));
 				
 				lavas.add(lav);
-			}					
-		} catch (SQLException e) {
+						
+			}	*/
+			Lavarropas lav=new Lavarropas();
+			lav.setDescrip("lava1");
+			lav.setCarga(45);
+			lav.setColor("blanco");
+			lav.setConsumoEnergetico("A");
+			lav.setPeso(45);
+			lav.setPrecioBase(3000);
+			
+			Lavarropas lav2 = new Lavarropas();
+			lav2.setDescrip("lava2");
+			lav2.setCarga(55);
+			lav2.setColor("negro");
+			lav2.setConsumoEnergetico("C");
+			lav2.setPeso(55);
+			lav2.setPrecioBase(5050);
+			
+			Lavarropas lav3 = new Lavarropas();
+			lav3.setDescrip("lava3");
+			lav3.setCarga(60);
+			lav3.setColor("negro");
+			lav3.setConsumoEnergetico("A");
+			lav3.setPeso(40);
+			lav3.setPrecioBase(3500);
+			
+			lavas.add(lav);
+			lavas.add(lav2);
+			lavas.add(lav3);
+			
+		
+		/*catch (SQLException e) {
 			e.printStackTrace();
 		}
 		finally{
@@ -47,6 +77,7 @@ public class CatalogoLavarropas {
 				sqle.printStackTrace();
 			}
 		}
+		*/
 		
 		return lavas;
 	}

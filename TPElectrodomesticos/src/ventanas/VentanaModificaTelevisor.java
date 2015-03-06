@@ -91,7 +91,7 @@ public class VentanaModificaTelevisor extends JFrame {
 			sintonizador.setText(String.valueOf(tele.getSintonizadorTDT()));
 			
 			CatalogoTelevisores cat = new CatalogoTelevisores();
-			cat.Update(desc,descripcion, precioBase, colorT, consumo, resolucion, sintonizador);
+			//cat.Update(desc,descripcion, precioBase, colorT, consumo, resolucion, sintonizador);
 			}
 			
 			else if(tele==null)

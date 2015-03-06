@@ -13,6 +13,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry exported="true" kind="lib" path="C:/Users/Yami/Downloads/mysql-connector-java-5.0.8-bin.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/TPWeb"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

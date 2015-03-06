@@ -14,6 +14,7 @@ public class CatalogoTelevisores {
 	public ArrayList<Television> getTelevisores(){
 		ArrayList<Television> teles= new ArrayList<Television>();
 		
+		/*
 		String sql="select * from televisores";
 		Statement sentencia=null;
 		ResultSet rs=null;
@@ -44,7 +45,38 @@ public class CatalogoTelevisores {
 			catch (SQLException sqle){
 				sqle.printStackTrace();
 			}
-		}
+		}*/
+		
+		Television tele1=new Television();
+		tele1.setDescrip("tele1");
+		tele1.setColor("negro");
+		tele1.setConsumoEnergetico("A");
+		tele1.setPeso(20);
+		tele1.setPrecioBase(35000);
+		tele1.setResolucion(40);
+		tele1.setSintonizadorTDT(true);
+		
+		Television tele2=new Television();
+		tele2.setDescrip("tele2");
+		tele2.setColor("gris");
+		tele2.setConsumoEnergetico("B");
+		tele2.setPeso(22);
+		tele2.setPrecioBase(50000);
+		tele2.setResolucion(40);
+		tele2.setSintonizadorTDT(true);
+		
+		Television tele3=new Television();
+		tele3.setDescrip("tele3");
+		tele3.setColor("azul");
+		tele3.setConsumoEnergetico("A");
+		tele3.setPeso(20);
+		tele3.setPrecioBase(65000);
+		tele3.setResolucion(40);
+		tele3.setSintonizadorTDT(true);
+		
+		teles.add(tele1);
+		teles.add(tele2);
+		teles.add(tele3);
 		
 		return teles;
 	}

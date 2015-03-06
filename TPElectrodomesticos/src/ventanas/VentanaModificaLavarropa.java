@@ -83,7 +83,7 @@ public class VentanaModificaLavarropa extends JFrame {
 				
 				
 				CatalogoLavarropas cat = new CatalogoLavarropas();
-				cat.Update(desc,descripcion, precioBase, colorL, consumo, peso, carga);
+				//cat.Update(desc,descripcion, precioBase, colorL, consumo, peso, carga);
 				}
 				
 				else if(lava==null)

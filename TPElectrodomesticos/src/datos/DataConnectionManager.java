@@ -16,9 +16,10 @@ private static DataConnectionManager instancia;
 		return instancia;
 	}
 	
-	private static String dbUrl="jdbc:mysql://localhost/electrodomesticos";
-	private static String dbUser="root";
-	private static String dbPassword="";
+	private static String dbUrl="jdbc:mysql://localhost/test";
+														
+	private static String dbUser="java";
+	private static String dbPassword="123";
 		
 	private DataConnectionManager(){}
 	
